@@ -26,3 +26,17 @@ console.log(`${user.firstName} ${user.lastName}`); //'Steven Eksteen'
 console.log(1 + 1);   //2
 console.log('1 + 1'); //'1 + 1'
 console.log(`${0 + 1} + ${101 - 100}`); //'1 + 1'
+
+user.name = user.firstName + ' ' + user.lastName;
+
+function greetUser(firstName) {
+	if(firstName) {
+		alert('Hello, ' + firstName);
+	} else {
+		console.log('No firstName was specified');
+	}
+}
+
+function sumNumber(number=0) {
+	alert(127 + number);
+}
