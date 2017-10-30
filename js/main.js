@@ -42,6 +42,10 @@ function sumNumber(number=0) {
 	alert(127 + number);
 }
 
+function percentageNumber(thisIs, percentOf) {
+	return (thisIs / percentOf) * 100
+}
+
 var price = 134754.65,
     AgeMin = 50,
     AgeMax = 65,
