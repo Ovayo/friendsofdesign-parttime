@@ -2,6 +2,7 @@ var user = {
 	firstName: 'Steven',
 	lastName: 'Eksteen',
 	emailAddress: 'eksoverzero@outlook.com',
+	age: 91,
 	children: [{
 		name: 'Mark',
 		age: 21
@@ -40,3 +41,45 @@ function greetUser(firstName) {
 function sumNumber(number=0) {
 	alert(127 + number);
 }
+
+var price = 134754.65,
+    AgeMin = 50,
+    AgeMax = 65,
+    taxBreakOnAgeMin = 10,
+    taxBreakOnAgeMax = 20,
+    taxBreakOnChildren = 10;
+
+var discount = 0,
+		totalPrice = price;
+
+// if ( (user.age >= oldAge) && () user.children.length > 0 ) {
+// 	var totalPrice = price - taxBreakOnAge - taxBreakOnChildren
+// } else if (user.age >= oldAge) {
+// 	var totalPrice = price - taxBreakOnAge
+// } else {
+// 	var totalPrice = price
+// }
+
+// if (user.age >= AgeMax) {
+// 	totalPrice = totalPrice - taxBreakOnAgeMax;
+// }
+
+// if (user.age >= AgeMin && user.age < AgeMax) {
+// 	totalPrice = totalPrice - taxBreakOnAgeMin;
+// }
+
+if (user.age >= AgeMax) {
+	totalPrice = totalPrice - taxBreakOnAgeMax;
+} else if (user.age >= AgeMin) {
+	totalPrice = totalPrice - taxBreakOnAgeMin;
+}
+
+alert(totalPrice + ' a saving of ' + (price - totalPrice));
+
+totalPrice = totalPrice - ( user.children.length * taxBreakOnChildren ) 
+
+alert(totalPrice + ' a saving of ' + (price - totalPrice));
+
+// if (user.children.length > 0) {
+// 	totalPrice = totalPrice - taxBreakOnChildren;
+// }
