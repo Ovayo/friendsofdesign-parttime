@@ -105,10 +105,11 @@ switch(user.age) {
   	alert('30');
     break;
   case 31:
-  	alert('30');
+  	alert('31');
     break;
   case 35:
-  	alert('30');
+  	alert('35');
     break;
   default:
+  	alert('Not 30, 31 or 35')
 }
