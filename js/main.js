@@ -30,6 +30,8 @@ console.log(`${0 + 1} + ${101 - 100}`); //'1 + 1'
 
 user.name = user.firstName + ' ' + user.lastName;
 
+var greetUser = 'Hello, ' + user.firstName;
+
 function greetUser(firstName) {
 	if(firstName) {
 		alert('Hello, ' + firstName);
@@ -40,6 +42,7 @@ function greetUser(firstName) {
 
 function sumNumber(number=0) {
 	alert(127 + number);
+	return;
 }
 
 function percentageNumber(thisIs, percentOf) {
@@ -87,3 +90,25 @@ alert(totalPrice + ' a saving of ' + (price - totalPrice));
 // if (user.children.length > 0) {
 // 	totalPrice = totalPrice - taxBreakOnChildren;
 // }
+
+
+if(user.age == 61) {
+
+} else if ( user.age == 60) {
+
+} else {
+
+}
+
+switch(user.age) {
+  case 30:
+  	alert('30');
+    break;
+  case 31:
+  	alert('30');
+    break;
+  case 35:
+  	alert('30');
+    break;
+  default:
+}
