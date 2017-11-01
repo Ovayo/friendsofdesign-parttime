@@ -3,130 +3,75 @@ var user = {
 	lastName: 'Eksteen',
 	emailAddress: 'eksoverzero@outlook.com',
 	age: 91,
+	salary: 15000,
 	children: [{
 		name: 'Mark',
-		age: 21
+		age: 21,
+		amount: 3213
 	}, {
 		name: 'Mary',
-		age: 45
+		age: 18,
+		amount: 3000
+	}, {
+		name: 'John',
+		age: 12,
+		amount: 1980
+	}, {
+		name: 'James',
+		age: 2,
+		amount: 1200
 	}]
 };
 
-console.log(user.firstName); //'Steven'
-console.log(user.lastName);  //'Eksteen'
+function percentageNumber(number, percent) {
+	return (percent / 100) * number
+}
 
-console.log(user.children);         //[{name: 'Mark', age: 21}, {name: 'Mary', age: 45}]
-console.log(user.children[0]);      //{name: 'Mark', age: 21}
-console.log(user.children[1].name); //'Mary'
+function maintenanceDeduction(user) {
+	// Loop through the user's children
+	   // If child is younger than 18,
+	   // add the amount to the total maintenance amount
+	// Return the total maintenance amount
 
-console.log(user.firstName + user.lastName); //'StevenEksteen'
-
-console.log(user.firstName + ' ' + user.lastName); //'Steven Eksteen'
-console.log(`${user.firstName} ${user.lastName}`); //'Steven Eksteen'
-
-console.log(1 + 1);   //2
-console.log('1 + 1'); //'1 + 1'
-console.log(`${0 + 1} + ${101 - 100}`); //'1 + 1'
-
-user.name = user.firstName + ' ' + user.lastName;
-
-var greetUser = 'Hello, ' + user.firstName;
-
-function greetUser(firstName) {
-	if(firstName) {
-		alert('Hello, ' + firstName);
-	} else {
-		console.log('No firstName was specified');
+	if(!user) {
+		return;
 	}
+
+	var maintenanceAmount = 0;
+
+	if(user.children && typeof(user.children) == 'object') {
+		console.log('--- Inclusion on if');
+		for(i=0;i<user.children.length;i++) {
+			console.log('--- Within loop. Index: ' + i);
+			var child = user.children[i];
+
+			if(child.age && child.amount) {
+				if(child.age < 18) {
+					maintenanceAmount += child.amount
+				}
+			}
+
+			console.log(child);
+		}
+	} else {
+		console.log('--- Exclusion on if');
+	}
+
+	return maintenanceAmount;
 }
 
-function sumNumber(number=0) {
-	alert(127 + number);
-	return;
+function calculateDeductions(user) {
+	return maintenanceDeduction(user) + percentageNumber(user.salary, 14)
 }
 
-function percentageNumber(thisIs, percentOf) {
-	return (thisIs / percentOf) * 100
-}
+var salary = user.salary,
+		deductions = calculateDeductions(user),
+		salaryAfterDeductions = salary - deductions;
 
-var price = 134754.65,
-    AgeMin = 50,
-    AgeMax = 65,
-    taxBreakOnAgeMin = 10,
-    taxBreakOnAgeMax = 20,
-    taxBreakOnChildren = 10;
+alert('Get ready');
 
-var discount = 0,
-		totalPrice = price;
+var salaryDiv = document.getElementById('userSalary');
 
-// if ( (user.age >= oldAge) && () user.children.length > 0 ) {
-// 	var totalPrice = price - taxBreakOnAge - taxBreakOnChildren
-// } else if (user.age >= oldAge) {
-// 	var totalPrice = price - taxBreakOnAge
-// } else {
-// 	var totalPrice = price
-// }
+salaryDiv.innerHTML = salary;
 
-// if (user.age >= AgeMax) {
-// 	totalPrice = totalPrice - taxBreakOnAgeMax;
-// }
 
-// if (user.age >= AgeMin && user.age < AgeMax) {
-// 	totalPrice = totalPrice - taxBreakOnAgeMin;
-// }
-
-if (user.age >= AgeMax) {
-	totalPrice = totalPrice - taxBreakOnAgeMax;
-} else if (user.age >= AgeMin) {
-	totalPrice = totalPrice - taxBreakOnAgeMin;
-}
-
-console.log(totalPrice + ' a saving of ' + (price - totalPrice));
-
-totalPrice = totalPrice - ( user.children.length * taxBreakOnChildren ) 
-
-console.log(totalPrice + ' a saving of ' + (price - totalPrice));
-
-// if (user.children.length > 0) {
-// 	totalPrice = totalPrice - taxBreakOnChildren;
-// }
-
-switch(user.age) {
-  case 30:
-  	console.log('30');
-    break;
-  case 31:
-  	console.log('31');
-    break;
-  case 35:
-  	console.log('35');
-    break;
-  default:
-  	console.log('Not 30, 31 or 35')
-}
-
-alert('About to break')
-
-var workingHours = [
-	'08:00',
-	'09:00',
-	'10:00',
-	'11:00',
-	'12:00',
-	'14:00',
-	'15:00',
-	'16:00'
-];
-
-// var count = 0;
-// while(count < invoiceItems) {
-// 	console.log(count);
-
-// 	// currentValue = currentValue + 1
-// 	// currentValue += 1
-// 	count++
-// }
-
-for(i=0;i<workingHours.length;i++) {
-	console.log( workingHours[i] );
-}
