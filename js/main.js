@@ -81,35 +81,52 @@ if (user.age >= AgeMax) {
 	totalPrice = totalPrice - taxBreakOnAgeMin;
 }
 
-alert(totalPrice + ' a saving of ' + (price - totalPrice));
+console.log(totalPrice + ' a saving of ' + (price - totalPrice));
 
 totalPrice = totalPrice - ( user.children.length * taxBreakOnChildren ) 
 
-alert(totalPrice + ' a saving of ' + (price - totalPrice));
+console.log(totalPrice + ' a saving of ' + (price - totalPrice));
 
 // if (user.children.length > 0) {
 // 	totalPrice = totalPrice - taxBreakOnChildren;
 // }
 
-
-if(user.age == 61) {
-
-} else if ( user.age == 60) {
-
-} else {
-
-}
-
 switch(user.age) {
   case 30:
-  	alert('30');
+  	console.log('30');
     break;
   case 31:
-  	alert('31');
+  	console.log('31');
     break;
   case 35:
-  	alert('35');
+  	console.log('35');
     break;
   default:
-  	alert('Not 30, 31 or 35')
+  	console.log('Not 30, 31 or 35')
+}
+
+alert('About to break')
+
+var workingHours = [
+	'08:00',
+	'09:00',
+	'10:00',
+	'11:00',
+	'12:00',
+	'14:00',
+	'15:00',
+	'16:00'
+];
+
+// var count = 0;
+// while(count < invoiceItems) {
+// 	console.log(count);
+
+// 	// currentValue = currentValue + 1
+// 	// currentValue += 1
+// 	count++
+// }
+
+for(i=0;i<workingHours.length;i++) {
+	console.log( workingHours[i] );
 }
