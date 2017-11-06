@@ -68,10 +68,23 @@ var salary = user.salary,
 		deductions = calculateDeductions(user),
 		salaryAfterDeductions = salary - deductions;
 
-alert('Get ready');
-
 var salaryDiv = document.getElementById('userSalary');
 
 salaryDiv.innerHTML = salary;
 
+var body = document.getElementsByTagName('body')[0];
+var elements = body.getElementsByTagName("*");
 
+for(i=0;i<elements.length;i++) {
+	var element = elements[i];
+
+	if(element.hasAttribute('data-content')){
+		var attributeValue = element.getAttribute('data-content');
+
+		element.innerHTML = attributeValue;
+	}
+}	
+
+for(i=0;i<elements.length;i++) {
+	// Your own awesome shit here
+}
