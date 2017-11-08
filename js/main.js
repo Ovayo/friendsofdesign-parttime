@@ -1,90 +1,30 @@
-var user = {
-	firstName: 'Steven',
-	lastName: 'Eksteen',
-	emailAddress: 'eksoverzero@outlook.com',
-	age: 91,
-	salary: 15000,
-	children: [{
-		name: 'Mark',
-		age: 21,
-		amount: 3213
-	}, {
-		name: 'Mary',
-		age: 18,
-		amount: 3000
-	}, {
-		name: 'John',
-		age: 12,
-		amount: 1980
-	}, {
-		name: 'James',
-		age: 2,
-		amount: 1200
-	}]
-};
+var body = document.getElementsByTagName('body')[0];
+var header = document.getElementById('header');
+var content = document.getElementById('content');
+var mainMenu = document.getElementById('main-menu');
 
-function percentageNumber(number, percent) {
-	return (percent / 100) * number
+function styleMainMenu(event) {
+	// If we are not at the top of the screen:
+	//   ...apply the scroll style to nav
+	//   ...else remove the scroll style from nav
+	// If we are more that one full screen window from the top:
+	//   ...apply the shadow stye to nav
+	//   ...else remove it
+	console.log(window.pageYOffset)
 }
 
-function maintenanceDeduction(user) {
-	// Loop through the user's children
-	   // If child is younger than 18,
-	   // add the amount to the total maintenance amount
-	// Return the total maintenance amount
+window.addEventListener("scroll", function(event){
+	var position = window.pageYOffset;
 
-	if(!user) {
-		return;
-	}
+	var nav = header.getElementsByTagName('nav')[0]
+	var classes = nav.classList.value
+	var hasClass = classes.indexOf('scroll') === -1
 
-	var maintenanceAmount = 0;
-
-	if(user.children && typeof(user.children) == 'object') {
-		console.log('--- Inclusion on if');
-		for(i=0;i<user.children.length;i++) {
-			console.log('--- Within loop. Index: ' + i);
-			var child = user.children[i];
-
-			if(child.age && child.amount) {
-				if(child.age < 18) {
-					maintenanceAmount += child.amount
-				}
-			}
-
-			console.log(child);
+	if(position > 1) {
+		if(hasClass){
+			nav.classList.value = classes + ' scroll';
 		}
 	} else {
-		console.log('--- Exclusion on if');
+		nav.classList.value = classes.replace('scroll', '');
 	}
-
-	return maintenanceAmount;
-}
-
-function calculateDeductions(user) {
-	return maintenanceDeduction(user) + percentageNumber(user.salary, 14)
-}
-
-var salary = user.salary,
-		deductions = calculateDeductions(user),
-		salaryAfterDeductions = salary - deductions;
-
-var salaryDiv = document.getElementById('userSalary');
-
-salaryDiv.innerHTML = salary;
-
-var body = document.getElementsByTagName('body')[0];
-var elements = body.getElementsByTagName("*");
-
-for(i=0;i<elements.length;i++) {
-	var element = elements[i];
-
-	if(element.hasAttribute('data-content')){
-		var attributeValue = element.getAttribute('data-content');
-
-		element.innerHTML = attributeValue;
-	}
-}	
-
-for(i=0;i<elements.length;i++) {
-	// Your own awesome shit here
-}
+});
