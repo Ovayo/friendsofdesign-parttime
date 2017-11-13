@@ -19,9 +19,9 @@ header nav {
 	position: fixed;
 	background-color: transparent;
 
-  -webkit-transition: background-color 300ms linear;
-      -ms-transition: background-color 300ms linear;
-          transition: background-color 300ms linear;
+  -webkit-transition: background-color 50ms linear;
+      -ms-transition: background-color 50ms linear;
+          transition: background-color 50ms linear;
 }
 
 header nav ul {

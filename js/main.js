@@ -1,30 +1,24 @@
-var body = document.getElementsByTagName('body')[0];
-var header = document.getElementById('header');
-var content = document.getElementById('content');
-var mainMenu = document.getElementById('main-menu');
+var header = $('#header');
 
 window.addEventListener("scroll", function(event){
-	var position = window.pageYOffset;
+	var position = $(document).scrollTop();
 
-	var nav = header.getElementsByTagName('nav')[0]
-	var hasScrollClass = nav.classList.value.indexOf('scroll') === -1
-	var hasShadowClass = nav.classList.value.indexOf('shadow') === -1
-
-	var totalHeaderHeight = header.offsetHeight - nav.offsetHeight
+	var nav = header.find('nav');
+	var totalHeaderHeight = header.height() - nav.height();
 
 	if(position > 1) {
-		if(hasScrollClass){
-			nav.classList.value = nav.classList.value + ' scroll';
+		if(!nav.hasClass('scroll')){
+			nav.removeClass('scroll');
 		}
 	} else {
-		nav.classList.value = nav.classList.value.replace('scroll', '').trim();
+		nav.addClass('scroll');
 	}
 
 	if(position > totalHeaderHeight) {
-		if(hasShadowClass){
-			nav.classList.value = nav.classList.value + ' shadow';
+		if(!nav.hasClass('shadow')){
+			nav.removeClass('shadow');
 		}
 	} else {
-		nav.classList.value = nav.classList.value.replace('shadow', '').trim();
+		nav.addClass('shadow');
 	}
 });
