@@ -64,7 +64,24 @@ main {
 	padding: 20px 0;
 }
 
+.card {
+	position: relative;
+}
 
+.card a {
+	padding: 10px;
+}
+
+.card img {
+	width: 100%;
+}
+
+.card .caption {
+	width: 100%;
+	bottom: 7px;
+	position: absolute;
+	background-color: rgba(0,0,0,0.6)
+}
 
 /* Larger than mobile */
 @media (min-width: 400px) {}
