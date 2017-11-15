@@ -14,6 +14,7 @@
 
 	  <link rel="stylesheet" href="vendor/skeleton/css/normalize.css">
 	  <link rel="stylesheet" href="vendor/skeleton/css/skeleton.css">
+	  <link rel="stylesheet" href="vendor/tingle/dist/tingle.min.css">
 
 	  <link rel="stylesheet" href="css/main.css">
 
@@ -53,7 +54,7 @@
 		    <div class="row">
 		      <div class="four columns">
 		      	<div class="card" id="1" href="#">
-		      		<img src="http://via.placeholder.com/800x800" />
+		      		<img src="http://via.placeholder.com/800x800?text=One" />
 		      		<div class="caption" style="display:none;">
 		      			<a href="/card-one">Card one</a>
 		      		</div>
@@ -61,8 +62,8 @@
 		      </div>
 
 		      <div class="four columns">
-		      	<div class="card" id="1" href="#">
-		      		<img src="http://via.placeholder.com/800x800" />
+		      	<div class="card" id="2" href="#">
+		      		<img src="http://via.placeholder.com/800x800?text=Two" />
 		      		<div class="caption" style="display:none;">
 		      			<a href="/card-one">Card one</a>
 		      		</div>
@@ -70,8 +71,8 @@
 		      </div>
 
 		      <div class="four columns">
-		      	<div class="card" id="1" href="#">
-		      		<img src="http://via.placeholder.com/800x800" />
+		      	<div class="card" id="3" href="#">
+		      		<img src="http://via.placeholder.com/800x800?text=Three" />
 		      		<div class="caption" style="display:none;">
 		      			<a href="/card-one">Card one</a>
 		      		</div>
@@ -80,19 +81,26 @@
 
 		      <div class="row">
 			      <div class="four columns">
-			      	<div class="card" id="1" href="#">
-			      		<img src="http://via.placeholder.com/800x800" />
+			      	<div class="card" id="4" href="#">
+			      		<img src="http://via.placeholder.com/800x800?text=Four" />
 			      		<div class="caption" style="display:none;">
 			      			<a href="/card-one">Card one</a>
 			      		</div>
 			      	</div>
 			      </div>
-		    	</div>
 
-		      <div class="row">
 			      <div class="four columns">
-			      	<div class="card" id="1" href="#">
-			      		<img src="http://via.placeholder.com/800x800" />
+			      	<div class="card" id="5" href="#">
+			      		<img src="http://via.placeholder.com/800x800?text=Five" />
+			      		<div class="caption" style="display:none;">
+			      			<a href="/card-one">Card one</a>
+			      		</div>
+			      	</div>
+			      </div>
+
+			      <div class="four columns">
+			      	<div class="card" id="6" href="#">
+			      		<img src="http://via.placeholder.com/800x800?text=Six" />
 			      		<div class="caption" style="display:none;">
 			      			<a href="/card-one">Card one</a>
 			      		</div>
@@ -104,10 +112,11 @@
 		</main>
 
 		<footer>
-			
+			<a id="terms" href="#" onclick="modal.open();">Terms & Conditions</a>
 		</footer>
 
 		<script src="vendor/jquery.min.js"></script>
+		<script src="vendor/tingle/dist/tingle.min.js"></script>
 	  <script src="js/main.js"></script>
 	</body>
 </html>

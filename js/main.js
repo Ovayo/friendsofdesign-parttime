@@ -19,7 +19,21 @@ window.addEventListener("scroll", function(event){
 	}
 });
 
+var modal = new tingle.modal({
+  footer: false,
+  stickyFooter: false,
+  closeMethods: ['overlay', 'button', 'escape'],
+  closeLabel: "Close"
+});
+
 $(document).ready(function(){
+	$('#content').on('click', '.card', function(event){
+		var src = $(this).find('img').attr('src');
+
+		modal.setContent(`<img src="${src}" />`);
+		modal.open();
+	})
+
 	$('#content').on('mouseover', '.card', function(){
 		$(this).parent().find('.caption').show()
 	})
@@ -27,12 +41,4 @@ $(document).ready(function(){
 	$('#content').on('mouseout', '.card', function(){
 		$(this).parent().find('.caption').hide()
 	})
-
-	$('.card').each(function(){
-		console.log( $(this).position() )
-	})
 });
-
-function toogleMenu() {
-	alert('Toggle')
-}

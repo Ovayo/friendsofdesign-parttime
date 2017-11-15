@@ -72,7 +72,8 @@ main {
 	padding: 10px;
 }
 
-.card img {
+.card img,
+.tingle-modal-box img {
 	width: 100%;
 }
 
@@ -81,6 +82,10 @@ main {
 	bottom: 7px;
 	position: absolute;
 	background-color: rgba(0,0,0,0.6)
+}
+
+.tingle-image .tingle-modal-box__content {
+	padding: 0;
 }
 
 /* Larger than mobile */
